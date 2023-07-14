@@ -4,9 +4,10 @@
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+This Technical User's Project focuses on how to use session variables in a basic JavaScript application. You might consider this training to be
+pre-cookie writing.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+    Session variables allow an application to communicate between several webpages.
 
 ## Add your files
 
