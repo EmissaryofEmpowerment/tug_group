@@ -1,0 +1,10 @@
+Window: localStorage property
+The localStorage read-only property of the window interface allows you to access a Storage object for the Document's origin; the stored data is saved across browser sessions.
+
+localStorage is similar to sessionStorage, except that while localStorage data has no expiration time, sessionStorage data gets cleared when the page session ends — that is, when the page is closed. (localStorage data for a document loaded in a "private browsing" or "incognito" session is cleared when the last "private" tab is closed.)
+
+All of your web storage data is contained within two object-like structures inside the browser: sessionStorage and localStorage. The first one persists data for as long as the browser is open (the data is lost when the browser is closed) and the second one persists data even after the browser is closed and then opened again.
+
+sessionStorage - Saves data until the browser is closed, the data is deleted when the tab/browser is closed.
+
+localStorage - Saves data "forever" even after the browser is closed BUT you shouldn't count on the data you store to be there later, the data might get deleted by the browser at any time because of pretty much anything, or deleted by the user, best practice would be to validate that the data is there first, and continue the rest if it is there. (or set it up again if its not there)
