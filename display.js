@@ -22,9 +22,27 @@ function main() {
         default:
             break;
     }
+    switch (localStorage.getItem("head_color")){
+        case "Purple":
+            ''//Add functionality here
+            break;
 
-    const hd_clr = document.createElement("p");
-    hd_clr.innerText = "You selected: " + localStorage.getItem("head_color");
+        case "Green":
+            ''//Add functionality here
+            break;
+
+        case "Blue":
+            ''//Add functionality here
+            break;
+
+        case "Red":
+        ''//Add functionality here
+        break;
+
+        default:
+            break;
+    }
+
 
     const bd_sh = document.createElement("p");
     switch (localStorage.getItem("body_shape")) {
@@ -47,9 +65,27 @@ function main() {
         default:
             break;
     }
+    switch (localStorage.getItem("body_color")){
+        case "Red":
+            ''//Add functionality here
+            break;
 
-    const bd_clr = document.createElement("p");
-    bd_clr.innerText = "You selected: " + localStorage.getItem("body_color");
+        case "Green":
+            ''//Add functionality here
+            break;
+
+        case "Blue":
+            ''//Add functionality here
+            break;
+
+        case "Orange":
+        ''//Add functionality here
+        break;
+
+        default:
+            break;
+    }
+    
 
     const extra = document.createElement("p");
     switch (localStorage.getItem("xtra")) {
@@ -70,10 +106,14 @@ function main() {
             break;
     }
 
+    let user_choices = [localStorage.getItem("head_shape"), localStorage.getItem("body_shape"), localStorage.getItem("xtra")];
+
+    const desc = document.createElement("p");
+    desc.innerHTML = "Now displaying: " + user_choices[0] +" Head " + user_choices[1] + " Body " + " Plus " + user_choices[2];
     const node = document.createElement("button");
     node.innerHTML += "<a href='index.html'>Draw New Monster</a>";
     //content.appendChild(hd_sh);
-    let node_list = [hd_sh, bd_sh, extra,node];
+    let node_list = [hd_sh, bd_sh, extra, desc,node];
     for (let index = 0; index < node_list.length; index++) {
         content.appendChild(node_list[index]);
                 }
