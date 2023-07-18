@@ -2,8 +2,7 @@
 function main() {
     let content = document.getElementById("render");
     const hd_sh = document.createElement("p");
-    let placeHolder = null; //TODO: retrieve and evaluate appropriate value
-    switch (placeHolder) {
+    switch (localStorage.getItem("head_shape")) {
         case "Oval":    
         hd_sh.innerHTML = "<img src='Images/oval_head.png'/";           
             break;
@@ -21,11 +20,9 @@ function main() {
             break;
         
         default:
-            hd_sh.innerHTML = "<p>TODO: retrieve and evaluate appropriate value for the head shape</p>";
             break;
     }
-    placeHolder = null; //TODO: retrieve and evaluate appropriate value
-    switch (placeHolder){
+    switch (localStorage.getItem("head_color")){
         case "Purple":
             ''//Add functionality here
             break;
@@ -43,14 +40,12 @@ function main() {
         break;
 
         default:
-            hd_sh.innerHTML += "<span>TODO: write functionality based on color of head</span>";
             break;
     }
 
 
     const bd_sh = document.createElement("p");
-    placeHolder = null; //TODO: retrieve and evaluate appropriate value
-    switch (placeHolder) {
+    switch (localStorage.getItem("body_shape")) {
         case "Oval":    
         bd_sh.innerHTML = "<img src='Images/oval_body.png'/";           
             break;
@@ -68,11 +63,9 @@ function main() {
             break;
         
         default:
-            bd_sh.innerHTML = "<p>TODO: retrieve and evaluate appropriate value for the body shape</p>";
             break;
     }
-    placeHolder = null; //TODO: retrieve and evaluate appropriate value
-    switch (placeHolder){
+    switch (localStorage.getItem("body_color")){
         case "Red":
             ''//Add functionality here
             break;
@@ -90,14 +83,12 @@ function main() {
         break;
 
         default:
-            bd_sh.innerHTML += "<span> TODO: add functionality based on body color</span>";
             break;
     }
     
 
     const extra = document.createElement("p");
-    placeHolder = null; //TODO: retrieve and evaluate appropriate value
-    switch (placeHolder) {
+    switch (localStorage.getItem("xtra")) {
         case "Arm":
             extra.innerHTML = "<img src='Images/arm.png'/>"; 
             break;
@@ -112,16 +103,16 @@ function main() {
             break;
     
         default:
-            bd_sh.innerHTML += "<span> TODO: retrieve and evaluate appropriate value for extra items</span>";
             break;
     }
 
-    let user_choices = ["TODO: local session variable","TODO: local session variable","TODO: local session variable"];
+    let user_choices = [localStorage.getItem("head_shape"), localStorage.getItem("body_shape"), localStorage.getItem("xtra")];
 
     const desc = document.createElement("p");
     desc.innerHTML = "Now displaying: " + user_choices[0] +" Head " + user_choices[1] + " Body " + " Plus " + user_choices[2];
     const node = document.createElement("button");
     node.innerHTML += "<a href='index.html'>Draw New Monster</a>";
+    //content.appendChild(hd_sh);
     let node_list = [hd_sh, bd_sh, extra, desc,node];
     for (let index = 0; index < node_list.length; index++) {
         content.appendChild(node_list[index]);

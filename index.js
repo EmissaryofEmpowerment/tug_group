@@ -1,12 +1,15 @@
-function SetLocalVariable(body_part) { //No argument needed! That's a perk of local variables.  
+function SetLocalVariable(body_part) { //No argument needed! That's a perk of local variables.
+    
     let block = document.getElementById(body_part);
     let elementCount = block.childElementCount;
-    for (let index = 0; index < elementCount; index++) {        
-        let slctn = block.children[index];    
+    for (let index = 0; index < elementCount; index++) {
+        let slctn = block.children[index];
+ 
+        slctn.nodeName == "INPUT" ? slctn.checked == true ? localStorage.setItem("body_part", block.children[index + 1].nodeValue) : '' :'';
         if (slctn.nodeName == "INPUT"){
             if (slctn.checked == true){
-                //TODO: retrieve appropriate value
-                //TODO: save information into local variable
+                let next_value = block.children[index + 1].textContent;
+                localStorage.setItem(body_part, next_value);
             }
         }
     }
